@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eka Nurul Baridah (2206789)</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff; 
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            color: #054344;
+        }
+
+        input[type=submit] {
+            background-color: #aa7804;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #aa7804;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2; 
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+        }
+    </style>
+
+    <script>
+    function tampilHasil()
+    {
+        //Lengkapi kode berikut ini untuk menampilkan hasil
+        /*
+            Ketentuan
+            =====================
+
+            Harga Kopi
+            =====================
+            Kopi Arabika = 10.000
+            Kopi Robusta = 15.000
+            Kopi Liberika = 20.000
+            Kopi Ekselsa = 25.000
+
+            Harga Ukuran
+            =====================
+            Sedang = 2.500
+            Besar  = 5.000
+
+            Tampilkan
+            =====================
+            Nama :
+            Alamat :
+            Pesanan Jenis Kopi :
+            Ukuran :
+            Total : Harga Kopi + Harga Ukuran
+        */
+
+    }
+
+    </script>
+</head>
+<body>
+
+<h2>Form Pemesanan Coffee</h2>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="nama">Nama Lengkap Pemesan</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="nama" name="nama" placeholder="Masukan Nama Anda ...">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="jenisKopi">Pilih Jenis Kopi</label>
+    </div>
+    <div class="col-75">
+      <select id="jenisKopi" name="jenisKopi">
+        <option value="Kopi Arabika">Kopi Arabika</option>
+        <option value="Kopi Robusta">Kopi Robusta</option>
+        <option value="Kopi Liberika">Kopi Liberika</option>
+        <option value="Kopi Ekselsa">Kopi Ekselsa</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="alamatPemesan">Alamat Pemesan</label>
+    </div>
+    <div class="col-75">
+      <textarea id="alamatPemesan" name="alamatPemesan" placeholder="Alamat Pemesan.." style="height:200px"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="ukuran">Ukuran</label>
+    </div>
+    <div class="col-25">
+      <input type="radio" id="sedang" name="ukuran" value="Sedang">
+  <label for="sedang">Sedang</label><br>
+    </div>
+    <div class="col-25">
+      <input type="radio" id="besar" name="ukuran" value="Besar">
+  <label for="besar">Besar</label><br>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input type="submit" onClick="tampilHasil()" value="Simpan">
+    <style>
+        #hasil {
+            background-color: #aa7804;
+            color: white;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        /*buat judul hasil */
+        #hasil h3 {
+            font-size: 24px;
+            margin: 0;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /*buat teks hasil */
+        #hasil p {
+            font-size: 12px;
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-100">
+      <p id="hasil" name="hasil"></p>
+    </div>
+</div>
+
+  <script>
+    function tampilHasil() {
+        //nilai dari input dan select
+        var nama = document.getElementById("nama").value;
+        var alamat = document.getElementById("alamatPemesan").value;
+        var jenisKopi = document.getElementById("jenisKopi").value;
+        var ukuran = document.querySelector('input[name="ukuran"]:checked').value;
+
+        //itung harga kopi berdasarkan jenis
+        var hargaKopi = 0;
+        switch (jenisKopi) {
+            case "Kopi Arabika":
+                hargaKopi = 10000;
+                break;
+            case "Kopi Robusta":
+                hargaKopi = 15000;
+                break;
+            case "Kopi Liberika":
+                hargaKopi = 20000;
+                break;
+            case "Kopi Ekselsa":
+                hargaKopi = 25000;
+                break;
+            default:
+                hargaKopi = 0;
+        }
+
+        // Menghitung harga ukuran
+        var hargaUkuran = 0;
+        switch (ukuran) {
+            case "Sedang":
+                hargaUkuran = 2500;
+                break;
+            case "Besar":
+                hargaUkuran = 5000;
+                break;
+            default:
+                hargaUkuran = 0;
+        }
+
+        // Menghitung total harga
+        var totalHarga = hargaKopi + hargaUkuran;
+
+        // Menampilkan hasil
+        var hasil = "Nama: " + nama + "<br>";
+        hasil += "Alamat: " + alamat + "<br>";
+        hasil += "Pesanan Jenis Kopi: " + jenisKopi + "<br>";
+        hasil += "Ukuran: " + ukuran + "<br>";
+        hasil += "Total: " + totalHarga;
+
+        // Menampilkan hasil di elemen dengan id "hasil"
+        document.getElementById("hasil").innerHTML = hasil;
+    }
+    </script>
+
+</body>
+</html>
+
